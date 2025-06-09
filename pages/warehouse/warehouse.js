@@ -7,7 +7,8 @@ Page({
     items: [],
     searchText: '',
     selectedWarehouse: {},
-    selectedCategory: {}
+    selectedCategory: {},
+    deptName: "库室查询",
   },
 
   onLoad() {
@@ -51,7 +52,8 @@ Page({
       warehouseId: warehouseId,
       reservoirAreaName: '' // 清空搜索参数
     };
-
+    this.setData({deptName: selectedWarehouse.deptName })
+    app.globalData.deptName = selectedWarehouse.deptName
     this.fetchData('reservoirArea', params, selectedWarehouse);
     this.setData({
       view: 'categoryList',
@@ -103,24 +105,23 @@ Page({
 
   //下一页库室查询
   selectMateria(e) {
-  const id = e.currentTarget.dataset.id;
-  const selectedStoragerack = this.data.items.find(c => c.storagerackId === id);
-  console.log("当前item：", selectedStoragerack);
-  app.globalData.storagerackName = selectedStoragerack.storagerackName;
- 
-   const params = {
+    const id = e.currentTarget.dataset.id;
+    const selectedStoragerack = this.data.items.find(c => c.storagerackId === id);
+    console.log("当前item：", selectedStoragerack);
+    app.globalData.storagerackName = selectedStoragerack.storagerackName;
+    const params = {
       reservoirAreaId: this.data.selectedCategory.reservoirAreaid,
       storagerackName: ''
     };
 
     this.fetchData('storageRack', params, this.data.selectedCategory);
- 
-  my.navigateTo({
-    url: `/pages/warehouse1/warehouse1?id=${id}`
-  });
-  
 
-},
+    my.navigateTo({
+      url: `/pages/warehouse1/warehouse1?id=${id}`
+    });
+
+
+  },
 
   navigateBack() {
     if (this.data.view === 'categoryList') {
@@ -160,6 +161,7 @@ Page({
         const result = response.data;
         if (type === 'warehouse') {
           this.setData({ warehouses: result.rows });
+
         } else if (type === 'reservoirArea') {
           const categories = result.data;
           this.setData({

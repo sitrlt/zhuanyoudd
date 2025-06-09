@@ -10,7 +10,8 @@ Page({
     receivedId: null, // 用于存储接收到的 id 参数
     reservoirAreaname: null,
     storagerackName: null,
-    storagelocationId: null
+    storagelocationId: null,
+    deptName:null
   },
 
   selectMateria2(e) {
@@ -34,6 +35,7 @@ Page({
         reservoirAreaname: app.globalData.reservoirAreaname,
         storagerackName: app.globalData.storagerackName,
         WmsNum: app.globalData.WmsNum,
+        deptName:app.globalData.deptName
       });
       console.log(this.data.receivedId);
       this.getEquipmentById(options.id); // 这是一个假设的方法，你需要根据实际情况实现

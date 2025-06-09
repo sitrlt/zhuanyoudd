@@ -8,7 +8,8 @@ Page({
     pageSize: 10, // 每页数量
     totalPages: 1, // 总页数
     totalCount: 0, // 总数据量
-    receivedId: null // 用于存储接收到的 id 参数
+    receivedId: null, // 用于存储接收到的 id 参数
+    deptName:null
   },
 
   onLoad: function (options) {
@@ -16,6 +17,7 @@ Page({
       this.setData({
         receivedId: options.id,
         storagelocationName: app.globalData.storagelocationName,
+        deptName:app.globalData.deptName
       });
       console.log(this.data.receivedId)
       this.getEquipmentById(options.id);

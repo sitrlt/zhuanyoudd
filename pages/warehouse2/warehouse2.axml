@@ -1,6 +1,6 @@
 <view class="container">
   <view class="header">
-    <text class="title">库室查询</text>
+    <text class="title">{{deptName}}</text>
   </view>
   <view class="header1">
     <text class="subtitle"> {{storagelocationName}}装备总数：{{wmsNum}}</text>

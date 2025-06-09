@@ -10,35 +10,31 @@ Page({
     isLoading: false,
     token: null,
   },
-async onLoad() {
+  async onLoad() {
+
+    dd.getAuthCode({
+      corpId: ""
+    }).then(res => {
+      console.log(res);
+      this.setData({
+        authCode: res.code
+      });
+      this.getLogin();
+    });
+
     // 立即显示加载遮罩
     this.setData({ isLoading: true });
-    
-    try {
-      // 异步验证 token
-      const hasValidToken = await this.checkToken();
-      
-      if (hasValidToken) {
-        this.getUserInfo(app.globalData.token);
-      } else {
-        await this.getAuthCode();
-      }
-    } catch (error) {
-      console.error('加载过程出错:', error);
-      my.showToast({
-        type: 'fail',
-        content: '加载失败，请重试',
-        duration: 2000
-      });
-    } finally {
-      // 无论成功或失败，5秒后隐藏加载遮罩
+    // 异步验证 token
+    const hasValidToken = await this.checkToken();
+    console.log(hasValidToken)
+    if (hasValidToken === false) {
       setTimeout(() => {
         this.setData({ isLoading: false });
       }, 5000);
     }
+
   },
-  
-  // 异步验证 token
+
   checkToken() {
     return new Promise((resolve) => {
       // 检查全局数据中是否有 token
@@ -46,25 +42,9 @@ async onLoad() {
         resolve(false);
         return;
       }
-      
+
     });
   },
-  
-  // 获取授权码（封装为独立方法）
-  getAuthCode() {
-    return dd.getAuthCode({
-      corpId: ""
-    }).then(res => {
-      console.log('获取授权码成功:', res);
-      this.setData({ authCode: res.code });
-      return res.code;
-    }).catch(err => {
-      console.error('获取授权码失败:', err);
-      throw err; // 抛出错误，由调用者处理
-    });
-  },
-
-
   getCode() {
     dd.getAuthCode({
       corpId: ""
@@ -110,26 +90,24 @@ async onLoad() {
         code: authCode
       },
       success: (response) => {
+
         if (response.data.code != 200) {
-          console.log(response.data.msg)
-          my.showToast({
-          type: 'fail',
-          content: '账号或密码输入错误',
-          duration: 1000
-        });
+          console.error("错误：", response.data.msg)
         } else {
           this.getCode()
           console.log("登录成功：", response.data);
-          // 登录成功后保存令牌或会话ID
           this.setData({ token: token })
           const token = response.data.token; // 返回的数据中包含令牌
           app.globalData.token = token;
           // 使用令牌调用获取用户信息的接口
           if (token) {
             this.getUserInfo(token);
+             my.redirectTo({
+            url: '/pages/workbench/workbench'  // 跳转到工作台页面
+          });
           }
+         
         }
-
 
       },
       fail: (error) => {
@@ -153,7 +131,46 @@ async onLoad() {
         content: '登录中...',
         duration: 1000
       });
-      this.getLogin()
+      my.request({
+        url: '/activation', // 后端接口地址
+        method: 'POST', // 请求方法
+        data: {
+          phone: phone,
+          passWord: password,
+          code: authCode
+        },
+        success: (response) => {
+          const msg = response.data.msg
+          if (msg === "用户不存在") {
+             console.log("用户不存在")
+          } else if (msg === "密码错误") {
+            my.showToast({
+              type: 'fail',
+              content: '密码输入错误',
+              duration: 1000
+            });
+          }else {
+            this.getCode()
+            console.log("登录成功：", response.data);
+            // 登录成功后保存令牌或会话ID
+            this.setData({ token: token })
+            const token = response.data.token; // 返回的数据中包含令牌
+            app.globalData.token = token;
+            console.log("当前token：",token)
+            // 使用令牌调用获取用户信息的接口
+            if (token) {
+              this.getUserInfo(token);
+              my.redirectTo({
+              url: '/pages/workbench/workbench'  // 跳转到工作台页面
+            });
+            }
+            
+          }
+        },
+        fail: (error) => {
+          console.error("登录失败：", error);
+        }
+      });
     } else {
       my.showToast({
         type: 'fail',
@@ -179,10 +196,7 @@ async onLoad() {
         this.setData({
           userInfo: response.data
         });
-        // 假设登录成功后执行页面跳转
-        my.redirectTo({
-          url: '/pages/workbench/workbench'  // 跳转到工作台页面
-        });
+
       },
       fail: (error) => {
         console.error("获取用户信息失败：", error);

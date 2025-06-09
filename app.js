@@ -9,6 +9,7 @@ App({
         storagelocationId:null,
         item:null,
         deptIds:null,
+        deptName:null,
         foamGunsItem:null
   },
   

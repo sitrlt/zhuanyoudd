@@ -3,7 +3,8 @@ Page({
   data: {
     foamGunsItem: null,
     warehouseItems: [],
-    materialtypeId: null // 用于存储接收到的 id 参数
+    materialtypeId: null, // 用于存储接收到的 id 参数
+    deptName:null,
   },
 
   onLoad: function (options) {
@@ -12,7 +13,8 @@ Page({
       // 从 options 中获取 id 参数
       this.setData({
         materialtypeId: options.id,
-        foamGunsItem: app.globalData.foamGunsItem
+        foamGunsItem: app.globalData.foamGunsItem,
+        deptName:app.globalData.deptName
       });
       console.log("当前数据foamGunsItem：", this.data.foamGunsItem)
       // 检查 type 参数

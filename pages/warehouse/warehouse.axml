@@ -2,7 +2,7 @@
   
   <!-- 页面头部 -->
   <view class="header">
-    <text class="title">库室查询</text>
+    <text class="title">{{deptName}}</text>
   </view>
   
   <view class="search">
