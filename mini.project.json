@@ -1,0 +1,7 @@
+{
+  "format": 2,
+  "enableParallelLoader": false,
+  "developOptions": {
+    "parallel": false
+  }
+}

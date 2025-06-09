@@ -1,0 +1,62 @@
+.container {
+  padding: 20px;
+}
+
+.header1 {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #4b6eac;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #888;
+}
+
+.table-container {
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+.table-cell {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  overflow: hidden; /* 隐藏超出单元格的内容 */
+  text-overflow: ellipsis; /* 超出部分显示省略号 */
+  white-space: normal; /* 文本不换行 */
+}
+
+.table-row {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.link {
+  color: #007AFF;
+  cursor: pointer;
+}

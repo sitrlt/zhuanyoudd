@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "gdt-jsapi": "^1.9.51",
+    "mini-antui": "^0.5.4",
+    "vue": "^3.5.14"
+  },
+  "devDependencies": {
+    "string-replace-loader": "^3.1.0"
+  }
+}

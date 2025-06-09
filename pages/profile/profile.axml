@@ -1,0 +1,37 @@
+<view class="profile-page">
+  <!-- Header -->
+  <view class="header">
+    <text class="title">浙政钉</text>
+    <!-- <button class="add-button">+</button> -->
+  </view>
+
+  <!-- Avatar and User Information -->
+  <view class="profile-content">
+    <view class="avatar">
+     <image class="avatar-image" src="{{userInfo.avatar}}" mode="aspectFill"/>
+    </view>
+    <view class="profile-info">
+      <view class="info-item"><text class="label">用户名：</text><text class="value">{{userInfo.userName}}</text></view>
+      <view class="info-item"><text class="label">手机号码：</text><text class="value">{{userInfo.phonenumber}}</text></view>
+      <view class="info-item"><text class="label">年龄：</text><text class="value">{{userInfo.age}}</text></view>
+      <view class="info-item"><text class="label">性别：</text> <text class="value">{{userInfo.sex == 0 ? '男' : '女'}}</text></view>
+      <view class="info-item"><text class="label">身高：</text><text class="value">{{userInfo.heigh}}</text></view>
+      <view class="info-item"><text class="label">体重：</text><text class="value">{{userInfo.weight}}</text></view>
+      <view class="info-item"><text class="label">血型：</text><text class="value">{{userInfo.xue}}</text></view>
+      <view class="info-item"><text class="label">所属单位：</text><text class="value"  >{{userInfo.dept.deptName}}</text></view>
+      <view class="info-item"><text class="label">岗位：</text><text class="value">{{userInfo.gangwei}}</text></view>
+      <view class="info-item"><text class="label">浙政钉账号：</text><text class="value">{{userInfo.zhanghao}}</text></view>
+      <view class="info-item"><text class="label">个人货位：</text><text class="value">{{userInfo.grhw}}</text></view>
+      <view class="info-item"><text class="label">创建日期：</text><text class="value">{{userInfo.createTime}}</text></view>
+      <view class="info-item"><text class="label">衣服尺码：</text><text class="value">{{userInfo.chima}}</text></view>
+      <view class="info-item"><text class="label">鞋子尺码：</text><text class="value">{{userInfo.xiez}}</text></view>
+      <view class="info-item"><text class="label">头盔尺码：</text><text class="value">{{userInfo.touk}}</text></view>
+      <view class="info-item"><text class="label">手套尺码：</text><text class="value">{{userInfo.st}}</text></view>
+    </view>
+
+    <!-- Buttons -->
+    <view class="button-group">
+      <button class="location-button" onTap="viewLocation" >个人货位</button> <!--onTap="viewLocation"-->
+    </view>
+  </view>
+</view>

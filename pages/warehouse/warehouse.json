@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "库室查询",
+   "usingComponents": {
+    "search-bar": "mini-antui/es/search-bar/index"
+  }
+}

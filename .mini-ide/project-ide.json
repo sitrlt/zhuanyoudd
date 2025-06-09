@@ -1,0 +1,8 @@
+{
+  "disableRemoteDebugSourcePanel": false,
+  "enableLegacyRemoteDebug": true,
+  "enableCloudBuild": false,
+  "ignoreWebViewDomainCheck": false,
+  "ignoreHttpDomainCheck": false,
+  "enableDistFileMinify": false
+}

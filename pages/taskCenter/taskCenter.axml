@@ -1,0 +1,34 @@
+<view class="task-center">
+  <view class="header">
+    <text>任务中心</text>
+  </view>
+
+  <view class="tab">
+    <view class="tab-item active">未完成 <text class="badge">3</text></view>
+    <view class="tab-item">已完成</view>
+  </view>
+
+  <view class="filters">
+    <checkbox-group>
+      <label><checkbox value="shenpi"/> 审批</label>
+      <label><checkbox value="yanhuo"/> 验收</label>
+      <label><checkbox value="daohuo"/> 到货</label>
+    </checkbox-group>
+  </view>
+
+  <view class="task-list">
+    <block a:for="{{tasks}}" a:key="taskId">
+      <view class="task-item" onTap="showTaskDetail">
+        <view class="task-info">
+          <text>任务单号: {{item.taskId}}</text>
+          <text>任务类型: {{item.taskType}}</text>
+          <text>任务时间: {{item.taskTime}}</text>
+          <text>任务地点: {{item.taskLocation}}</text>
+          <text>任务状态: {{item.taskStatus}}</text>
+        </view>
+        <!-- 传递 taskId 参数 -->
+        <view class="task-arrow" onTap="showTaskDetail" data-task-id="{{item.taskId}}">></view>
+      </view>
+    </block>
+  </view>
+</view>

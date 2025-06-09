@@ -1,0 +1,67 @@
+.container {
+  padding: 20rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.item-image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.qrcode {
+  margin-left: 20rpx;
+}
+
+.qr-code-image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.info {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.status {
+  color: green;
+  font-weight: bold;
+}
+
+.status-switch {
+  margin: 20rpx 0;
+}
+
+.details {
+  margin-bottom: 20rpx;
+}
+
+.rating {
+  margin: 20rpx 0;
+}
+
+.star {
+  color: gold;
+  margin-right: 5rpx;
+}
+
+.review-link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10rpx;
+}
+
+button {
+  flex: 1;
+  margin: 5rpx;
+}

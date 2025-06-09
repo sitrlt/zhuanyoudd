@@ -1,0 +1,45 @@
+.container {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #4b6eac;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+
+.search-button {
+  background-color: #ffffff;
+  margin-left: 8px;
+  border: 1px solid #ddd;
+}
+.am-search-input{
+  background-color: white;
+}
+.warehouse-list, .category-list, .item-list {
+  margin-top: 16px;
+}
+
+.warehouse-item, .category-item, .item {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+}

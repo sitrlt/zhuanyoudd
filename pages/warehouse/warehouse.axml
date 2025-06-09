@@ -1,0 +1,40 @@
+<view class="container">
+  
+  <!-- 页面头部 -->
+  <view class="header">
+    <text class="title">库室查询</text>
+  </view>
+  
+  <view class="search">
+    <search-bar class="search-button" value="{{searchText}}" placeholder="输入名称" onCancel="handleCancel" onClear="handleClear" onSubmit="onSearchInput" showCancelButton="{{false}}" />
+  </view>
+  
+  <!-- 仓库列表 -->
+  <view class="warehouse-list" a:if="{{view === 'warehouseList'}}">
+    <block a:for="{{warehouses}}" a:key="id">
+      <view class="warehouse-item" onTap="selectWarehouse" data-id="{{item.warehouseId}}">
+        {{item.warehouseName}}
+      </view>
+    </block>
+  </view>
+  
+  <!-- 分类列表 -->
+  <view class="category-list" a:if="{{view === 'categoryList'}}">
+    <text class="title">{{selectedWarehouse.warehouseName}}</text>
+    <block a:for="{{categories}}" a:key="id">
+      <view class="category-item" onTap="selectCategory" data-id="{{item.reservoirAreaid}}">
+        {{item.reservoirAreaname}}
+      </view>
+    </block>
+  </view>
+  
+  <!-- 物资列表 -->
+  <view class="item-list" a:if="{{view === 'itemList'}}">
+    <text class="title">{{selectedCategory.reservoirAreaname}}</text>
+    <block a:for="{{items}}" a:key="id">
+      <view class="item" onTap="selectMateria" data-id="{{item.storagerackId}}">
+        {{item.storagerackName}}
+      </view>
+    </block>
+  </view>
+</view>

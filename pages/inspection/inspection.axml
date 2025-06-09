@@ -1,0 +1,30 @@
+<view class="container">
+  <!-- 顶部信息 -->
+  <view class="header">
+    <image src="{{itemImage}}" class="item-image"></image>
+    <view class="qrcode">
+      <text>二维码：</text>
+      <image src="{{qrCodeImage}}" class="qr-code-image"></image>
+    </view>
+    <view class="info">
+      <view>编码：{{code}}</view>
+      <view>EPC码：{{epcCode}}</view>
+      <view>所属单位：{{ownerUnit}}</view>
+      <view>货位：{{storageLocation}}</view>
+      <view>物品状态：<text class="status">{{itemStatus}}</text></view>
+    </view>
+  </view>
+
+  <!-- 装备状况选择 -->
+  <view class="equipment-status">
+    <view><text>装备状况：</text></view>
+    <picker value="{{arrayIndex}}" range-key="name" range="{{statusOptions}}" onChange="onStatusChange">
+      <view>
+        <view>{{statusOptions[arrayIndex].name}}</view>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 提交按钮 -->
+  <button class="submit-button" onTap="submitInspection">提交</button>
+</view>

@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="header">
+    <text class="title">物资识别</text>
+  </view>
+  
+  <view class="search-section">
+    <input 
+      class="input-field" 
+      placeholder="输入物资编码或EPC码" 
+      bindinput="onInputChange" 
+      value="{{inputValue}}" 
+    />
+    <view class="search-icon" onTap="onSearch" >🔍</view>
+  </view>
+  <view class="scan-section" onTap="onAsset">
+    <view class="scan-box"></view>
+    <text class="scan-text">扫描二维码</text>
+  </view>
+</view>

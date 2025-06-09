@@ -1,0 +1,67 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="header">
+    <text>详情页</text>
+  </view>
+
+  <!-- 资产信息 -->
+  <view class="asset-info">
+    <view><image src="/pages/a/materia.png" class="asset-image"></image></view>
+    <view class="qr-code">二维码
+      <image src="/pages/a/qrcode.png" class="asset-image"></image>
+    </view>
+    <view class="details">
+      <view><text>编码：ZJ2345678908293424E07E</text></view>
+      <view><text>EPC码：E23456789082393424E07E</text></view>
+      <view><text>所属单位：杭州西湖大队</text></view>
+      <view><text>货位：杭州西湖大队西湖站</text></view>
+      <view><text>物品状态：执勤</text></view>
+    </view>
+  </view>
+
+  <!-- 状态和评分 -->
+  <view class="status">
+    <text>执勤状态：执勤中</text>
+    <switch checked="true" class="status-switch"></switch>
+  </view>
+  <view class="additional-info">
+    <text>47位编码：ZJ2345678908293424E07EE23456789082393424E07E</text>
+  </view>
+  <view class="additional-info">
+    <text>物资名称：PQ8泡沫枪</text>
+  </view>
+  <view class="additional-info">
+    <text>物资类型：泡沫枪</text>
+  </view>
+  <view class="additional-info">
+    <text>所属单位：杭州西湖大队西湖站</text>
+  </view>
+  <view class="additional-info">
+    <text>执勤单位：杭州西湖大队西湖站</text>
+  </view>
+  <view class="additional-info">
+    <text>生产商：上海鹰格安防设备有限公司</text>
+  </view>
+  <view class="additional-info">
+    <text>供应商：上海鹰格安防设备有限公司</text>
+  </view>
+
+  <!-- 评分 -->
+  <view class="ratings">
+    <text>售后服务综合评分：</text>
+    <view class="star-rating">★★★★☆</view>
+    <text>装备性能综合评分：</text>
+    <view class="star-rating">★★★☆☆</view>
+    <view class="rating">
+      <text class="review-link"><navigator url="/pages/equipmentDetail/equipmentDetail">去评价</navigator></text>
+    </view>
+  </view>
+
+  <!-- 各种操作按钮 -->
+  <view class="actions">
+    <button class="report-button" onTap="showScrap">报废</button>
+    <button class="maintenance-button" onTap="showMaintenancePage">维修</button>
+    <button class="save-button" onTap="showUpKeepPage">保养</button>
+    <button class="inspection-button" onTap="showInspectionPage">巡检</button>
+  </view>
+</view>

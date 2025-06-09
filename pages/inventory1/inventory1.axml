@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="header">
+    <text class="title">库存查询</text>
+  </view>
+  <view class="header1">
+    <text class="subtitle"> {{item.typeName}}装备总数：{{item.num}}</text>
+  </view>
+  <view class="table">
+    <view class="table-header">
+      <text class="table-cell">物资名称</text>
+      <text class="table-cell">品牌</text>
+      <text class="table-cell">数量</text>
+      <text class="table-cell">操作</text>
+    </view>
+    <block a:for="{{foamGuns}}" a:key="index">
+      <view class="table-row" onTap="handleLinkTap" data-item="{{item}}">
+        <text class="table-cell">{{item.materialName}}</text>
+        <text class="table-cell">{{item.producersName}}</text>
+        <text class="table-cell">{{item.kcQuantity}}</text>
+        <view class="table-cell">
+          <navigator class="link" url="/pages/warehouse3/warehouse3?id={{item.materialtypeId}}&type=details">详情</navigator>
+        </view>
+      </view>
+    </block>
+  </view>
+    <!-- 分页控件 -->
+  <view class="pagination">
+    <text onTap="prevPage" class="pagination-item {{currentPage === 1 ? 'disabled' : ''}}">上一页</text>
+    <text class="pagination-current">{{currentPage}} / {{totalPages}}</text>
+    <text onTap="nextPage" class="pagination-item {{currentPage === totalPages ? 'disabled' : ''}}">下一页</text>
+  </view>
+  
+</view>

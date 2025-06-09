@@ -1,0 +1,63 @@
+.task-center {
+  padding: 10px;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tab-item {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.tab-item.active {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-list {
+  margin-top: 10px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-arrow {
+  font-size: 18px;
+  color: #999;
+}
+
+.badge {
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}

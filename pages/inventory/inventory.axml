@@ -1,0 +1,130 @@
+<view class="container">
+  <!-- 页面头部 -->
+  <view class="header">
+    <text class="title">库存查询</text>
+    <text class="open-modal-button" onTap="openUnitSelection">选择单位</text>
+  </view>
+  
+  <!-- 搜索框 -->
+  <view class="search">
+    <search-bar focus class="search-button" value="{{searchText}}" onCancel="handleCancel" onClear="handleClear" onSubmit="onSearchInput" 
+      showCancelButton="{{false}}" />
+  </view>
+  
+  <!-- 库存列表 -->
+  <view class="inventory-list">
+    <view class="inventory-item" a:for="{{inventory}}" a:key="id" onTap="showDetails" data-id="{{item.id}}">
+      <text class="item-name">{{item.typeName}}</text>
+      <text class="item-quantity">{{item.num}}</text>
+    </view>
+  </view>
+  
+  <!-- 分页控件 -->
+  <view class="pagination">
+    <text onTap="prevPage" class="pagination-item {{currentPage === 1 ? 'disabled' : ''}}">上一页</text>
+    <text class="pagination-current">{{currentPage}} / {{totalPages}}</text>
+    <text onTap="nextPage" class="pagination-item {{currentPage === totalPages ? 'disabled' : ''}}">下一页</text>
+  </view>
+  
+  <!-- 单位选择弹窗 -->
+  <view a:if="{{showUnitSelectionModal}}" class="modal">
+    <scroll-view class="modal-content" scroll-y="true">
+      <text class="modal-title">选择所属单位</text>
+      
+          <!-- 显示当前已选单位 -->
+      <view class="selected-unit-box">
+        <text class="selected-unit-title">已选择的单位：</text>
+        <view class="selected-unit-tags">
+          <block a:for="{{selectedUnitsByLevel.level1}}" a:key="value">
+            <view class="unit-tag">
+              {{item.label}}
+              <text class="remove-tag" onTap="removeSelectedUnit" data-level="level1" data-id="{{item.value}}">×</text>
+            </view>
+          </block>
+          <block a:for="{{selectedUnitsByLevel.level2}}" a:key="value">
+            <view class="unit-tag">
+              {{item.label}}
+              <text class="remove-tag" onTap="removeSelectedUnit" data-level="level2" data-id="{{item.value}}">×</text>
+            </view>
+          </block>
+          <block a:for="{{selectedUnitsByLevel.level3}}" a:key="value">
+            <view class="unit-tag">
+              {{item.label}}
+              <text class="remove-tag" onTap="removeSelectedUnit" data-level="level3" data-id="{{item.value}}">×</text>
+            </view>
+          </block>
+          <block a:for="{{selectedUnitsByLevel.level4}}" a:key="value">
+            <view class="unit-tag">
+              {{item.label}}
+              <text class="remove-tag" onTap="removeSelectedUnit" data-level="level4" data-id="{{item.value}}">×</text>
+            </view>
+          </block>
+        </view>
+        <view a:if="{{!selectedUnitsByLevel.level1.length && !selectedUnitsByLevel.level2.length && !selectedUnitsByLevel.level3.length && !selectedUnitsByLevel.level4.length}}" 
+          class="empty-tag">
+          暂无选择
+        </view>
+      </view>
+      
+      <!-- 返回按钮 -->
+      <button class="back-button" onTap="goBack" a:if="{{view !== 'level1'}}">
+        返回上一级
+      </button>
+      
+      <!-- 第一级 -->
+      <view a:if="{{view === 'level1'}}">
+        <block a:for="{{level1}}" a:key="id">
+          <view class="unit-item {{item.selected ? 'selected' : ''}}" 
+            onTap="handleUnitTap" data-id="{{item.value}}" data-label="{{item.label}}" 
+            data-children="{{item.children}}" data-level="level1">
+            {{item.label}}
+            {{item.selected ? '√' : ''}}
+          </view>
+        </block>
+      </view>
+      
+      <!-- 第二级 -->
+      <view a:if="{{view === 'level2'}}">
+        <text class="breadcrumb">{{selectedLevel1 && selectedLevel1.label || '一级单位'}}</text>
+        <block a:for="{{level2}}" a:key="id">
+          <view class="unit-item {{item.selected ? 'selected' : ''}}" 
+            onTap="handleUnitTap" data-id="{{item.value}}" data-label="{{item.label}}" 
+            data-children="{{item.children}}" data-level="level2">
+            {{item.label}}
+            {{item.selected ? '√' : ''}}
+          </view>
+        </block>
+      </view>
+      
+      <!-- 第三级 -->
+      <view a:if="{{view === 'level3'}}">
+        <text class="breadcrumb">{{selectedLevel1 && selectedLevel1.label || '一级单位'}} > {{selectedLevel2 && selectedLevel2.label || '二级单位'}}</text>
+        <block a:for="{{level3}}" a:key="id">
+          <view class="unit-item {{item.selected ? 'selected' : ''}}" 
+            onTap="handleUnitTap" data-id="{{item.value}}" data-label="{{item.label}}" 
+            data-children="{{item.children}}" data-level="level3">
+            {{item.label}}
+            {{item.selected ? '√' : ''}}
+          </view>
+        </block>
+      </view>
+      
+      <!-- 第四级 -->
+      <view a:if="{{view === 'level4'}}">
+        <text class="breadcrumb">
+          {{selectedLevel1 && selectedLevel1.label || '一级单位'}} > {{selectedLevel2 && selectedLevel2.label || '二级单位'}} > {{selectedLevel3 && selectedLevel3.label || '三级单位'}}
+        </text>
+        <block a:for="{{level4}}" a:key="id">
+          <view class="unit-item {{item.selected ? 'selected' : ''}}" 
+            onTap="handleUnitTap" data-id="{{item.value}}" data-label="{{item.label}}" 
+            data-children="{{item.children}}" data-level="level4">
+            {{item.label}}
+            {{item.selected ? '√' : ''}}
+          </view>
+        </block>
+      </view>
+      
+      <button class="confirm-button" onTap="closeUnitSelection">确认</button>
+    </scroll-view>
+  </view>
+</view>  

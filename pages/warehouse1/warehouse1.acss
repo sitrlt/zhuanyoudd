@@ -1,0 +1,40 @@
+/* 1.acss */
+.container {
+  padding: 20px;
+}
+
+.header1 {
+  margin-top: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #4b6eac;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #888;
+}
+
+.equipment-list {
+  margin-top: 20px;
+}
+
+.equipment-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.count {
+  color: #f56c6c;
+  font-style: italic;
+}

@@ -1,0 +1,82 @@
+<view class="container">
+  <view class="header">
+    <view class="title">装备评价</view>
+  </view>
+  
+  <view class="info">
+    <view class="info-item">物资名称：PQ8泡沫枪</view>
+    <view class="info-item">物资类型：泡沫枪</view>
+    <view class="info-item">生产商：上海鹰格安防设备有限公司</view>
+    <view class="info-item">供应商：上海鹰格安防设备有限公司</view>
+  </view>
+
+  <view class="rating-section">
+    <view class="rating-item">
+      <text>售后服务评分：</text>
+      <view class="stars">
+        <view a:for="{{[1, 2, 3, 4, 5]}}" a:key="*this" class="star {{index < afterSaleScore ? 'active' : ''}}" onTap="rateAfterSale" data-index="{{index}}">☆</view>
+      </view>
+    </view>
+    <view class="rating-item">
+      <text>装备性能评分：</text>
+      <view class="stars">
+        <view a:for="{{[1, 2, 3, 4, 5]}}" a:key="*this" class="star {{index < equipmentScore ? 'active' : ''}}" onTap="rateEquipment" data-index="{{index}}">☆</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="comment-section">
+    <textarea placeholder="评论留言：" bindinput="onCommentInput"></textarea>
+    <view class="comment-actions">
+      <view class="icon upload-icon" onTap="chooseImage"></view>
+      <view class="icon camera-icon" onTap="chooseVideo"></view>
+      <view class="submit-btn" onTap="submitComment">提交</view>
+    </view>
+    <!-- <view class="preview-media">
+      <view class="image-preview">
+        <block a:for="{{uploadedImages}}" a:key="*this">
+          <image class="preview-img" src="{{item}}"></image>
+        </block>
+      </view>
+      <view class="video-preview" a:if="{{uploadedVideo}}">
+        <video src="{{uploadedVideo}}" controls></video>
+      </view>
+    </view> -->
+  </view>
+
+  <view class="comments-list">
+    <text class="section-title">相关评论：</text>
+    <block a:for="{{comments}}" a:key="*this">
+      <view class="comment-item">
+        <view class="comment-header">
+          <view class="avatar"></view>
+          <text class="nickname">{{item.nickname}}</text>
+        </view>
+        <view class="comment-content">
+            <text>{{item.comment}}</text>
+            <view class="actions">
+              <view class="images">
+                <block a:for="{{item.images}}" a:key="*this">
+                  <image src="{{item}}" class="comment-image" onTap="openImage" data-src="{{item}}"></image>
+                </block>
+              </view>
+              <view class="comment-video" a:if="{{item.video}}">
+                <video src="{{item.video}}" object-fit=fill></video>
+              </view>
+                <!-- 放大图片的弹窗 -->
+              <view a:if="{{showImageModal}}" class="image-modal" onTap="closeImage">
+                <image src="{{modalImage}}" class="modal-image"></image>
+              </view>
+          </view>
+        </view>
+        <view class="comment-footer">
+          <text class="date">{{item.date}}</text>
+          <view class="ratings">
+            <view><text>售后评分：{{item.afterSaleScore}} </text></view>
+            <view><text>装备评分：{{item.equipmentScore}} </text></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

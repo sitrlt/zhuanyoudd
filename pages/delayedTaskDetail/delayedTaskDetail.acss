@@ -1,0 +1,67 @@
+.task-detail {
+  padding: 10px;
+}
+
+.header {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  color: white;
+  background-color: #2b7dbd;
+  padding: 10px;
+}
+
+.task-info {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.link {
+  margin: 10px 0;
+  color: #2b7dbd;
+  text-align: left;
+}
+
+.file-link {
+  color: #2b7dbd;
+  text-decoration: underline;
+}
+
+.approval-section {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.approval-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-item {
+  margin-right: 20px;
+}
+
+.reason-section {
+  margin-top: 10px;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.submit-button {
+  width: 100%;
+  height: 40px;
+  background-color: #2b7dbd;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}

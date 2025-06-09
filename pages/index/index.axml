@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="title">激活账号</view>
+  <view class="subtitle">首次登录请通过手机号关联钉钉账号</view>
+   <!-- 加载遮罩 -->
+<view a:if="{{isLoading}}" class="loading-mask">
+  <view class="loading-container">
+    <view class="loading-spinner"></view>
+    <view class="loading-text">正在加载中...</view>
+  </view>
+</view>
+  <view class="input-section">
+    <view class="input-label">手机号</view>
+    <input class="input" placeholder="请输入手机号" onInput="onPhoneInput" />
+  </view>
+  
+  <view class="input-section">
+    <view class="input-label">密码</view>
+    <input class="input" 
+    type="text"
+    password
+    placeholder="请输入密码" onInput="onPasswordInput" />
+  </view>
+  
+  <view class="login-section">
+    <button class="login-button" onTap="onLogin">下一步</button>
+    <view class="link-text">已有激活账号 <text class="link" onTap="onDirectLogin">立即登录</text></view>
+  </view>
+  
+  <view class="policy">
+    <checkbox checked="true" /> 我已阅读并同意 <text class="link">《隐私政策》</text>
+  </view>
+</view>

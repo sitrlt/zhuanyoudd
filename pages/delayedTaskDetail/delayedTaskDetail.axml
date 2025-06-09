@@ -1,0 +1,41 @@
+<view class="task-detail">
+  <view class="header">
+    <text>任务详情</text>
+  </view>
+
+  <view class="task-info">
+    <view><text>审批单号：202410291009</text></view>
+    <view><text>合同编号：CS129310230</text></view>
+    <view><text>审批类型：延期到货审批</text></view>
+    <view><text>延期交货说明：可能延迟</text></view>
+    <view><text>延期交货时间：202501011010</text></view>
+  </view>
+
+  <view class="link">
+    <text class="file-link" onTap="viewFile">点击查看文件</text>
+  </view>
+
+  <view class="approval-section">
+    <view class="approval-option">
+      <text>审批意见：</text>
+      <radio-group bindchange="onApprovalChange">
+        <label class="radio-item">
+          <radio value="通过" /> 通过
+        </label>
+        <label class="radio-item">
+          <radio value="驳回" /> 驳回
+        </label>
+      </radio-group>
+    </view>
+    <view class="reason-section" a:f="{{approval === '驳回'}}">
+      <text>驳回原因：</text>
+      <textarea placeholder="请输入驳回原因" bindinput="onReasonInput" />
+    </view>
+  </view>
+
+  <view class="link">
+    <text class="file-link" onTap="uploadFile">点击上传审批文件</text>
+  </view>
+
+  <button class="submit-button" onTap="submitApproval">提交</button>
+</view>

@@ -1,0 +1,32 @@
+<view class="maintenance-page">
+  <!-- 维修页面头部 -->
+  <view class="maintenance-header">
+    <text>维修</text>
+  </view>
+
+  <!-- 维修信息 -->
+  <view class="maintenance-details">
+    <text>编码：ZJ2345678908293424E07E</text>
+  </view>
+  <view class="maintenance-details">
+    <text>物资名称：PQ8泡沫枪</text>
+  </view>
+  <view class="maintenance-details">
+    <text>物资类型：泡沫枪</text>
+  </view>
+
+  <!-- 维修方式选择 -->
+  <view class="maintenance-options">
+    <radio-group bindchange="handleMaintenanceMethodChange">
+      <label><radio value="outsourced" /> 外送维修</label>
+      <label><radio value="internal" /> 支队维修中心</label>
+    </radio-group>
+  </view>
+
+  <!-- 维修单位和需求输入 -->
+  <input class="repair-unit-input" placeholder="填写维修单位" bindinput="handleMaintenanceUnitInput" />
+  <textarea class="repair-requirements-input" placeholder="填写维修需求" bindinput="handleMaintenanceRequirementInput"></textarea>
+
+  <!-- 提交按钮 -->
+  <button class="submit-button" onTap="submitMaintenanceRequest">提交</button>
+</view>

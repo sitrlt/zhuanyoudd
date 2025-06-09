@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/test/test",
+    "pages/workbench/workbench",
+    "pages/warehouse/warehouse",
+    "pages/inventory/inventory",
+    "pages/asset/asset",
+    "pages/maintenance/maintenance",
+    "pages/taskCenter/taskCenter",
+    "pages/delayedTaskDetail/delayedTaskDetail",
+    "pages/profile/profile",
+    "pages/locationDetail/locationDetail",
+    "pages/materialDetail/materialDetail",
+    "pages/warehouse1/warehouse1",
+    "pages/warehouse2/warehouse2",
+    "pages/warehouse3/warehouse3",
+    "pages/inspection/inspection",
+    "pages/upkeep/upkeep",
+    "pages/equipmentDetail/equipmentDetail",
+    "pages/distinguish/distinguish",
+    "pages/inventory1/inventory1"
+  ],
+  "window": {
+    "defaultTitle": "装备物资综合保障"
+  }
+}

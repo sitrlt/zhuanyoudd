@@ -1,0 +1,109 @@
+.container {
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 加载遮罩样式 */
+/* 加载遮罩层样式 */
+.loading-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white; /* 半透明背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* 确保加载遮罩层在最上层 */
+}
+
+/* 加载容器样式 */
+.loading-container {
+  margin-left: 25px;
+  text-align: center;
+}
+
+/* 加载图标样式 */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #4b6eac;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+/* 加载文本样式 */
+.loading-text {
+  font-size: 16px;
+  color: #4b6eac;
+}
+
+/* 旋转动画 */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #888888;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 15px;
+}
+
+.input-label {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.login-section {
+  margin-top: 20px;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #4b6eac;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.link-text {
+  text-align: center;
+  margin-top: 10px;
+  color: #4b6eac;
+}
+
+.policy {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888888;
+}
+
+.link {
+  color: #4b6eac;
+  text-decoration: underline;
+}

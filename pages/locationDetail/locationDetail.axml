@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <text class="back-button">个人中心</text>
+    <text class="title">王队长携带装备</text>
+  </view>
+  
+  <view class="table">
+    <view class="table-row header-row">
+      <text class="cell">器材类型</text>
+      <text class="cell">数量</text>
+      <text class="cell">操作</text>
+    </view>
+    <block a:for="{{equipmentList}}" a:key="index">
+      <view class="table-row">
+        <text class="cell">{{item.type}}</text>
+        <text class="cell">{{item.quantity}}</text>
+        <text class="cell"><text class="link" onTap="viewDetails" data-id="{{item.id}}">详情</text></text>
+      </view>
+    </block>
+  </view>
+  
+  <view class="actions">
+    <button class="button" onTap="handleClaim">领取</button>
+    <button class="button" onTap="handleReturn">公差</button>
+  </view>
+</view>

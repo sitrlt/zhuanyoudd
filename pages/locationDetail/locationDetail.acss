@@ -1,0 +1,69 @@
+.container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+   padding: 15px 20px;
+  background-color: #4b6eac;
+  color: white;
+}
+
+.back-button {
+  font-size: 28rpx;
+  margin-right: 20rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.table {
+  margin-top: 20rpx;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx 20rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.header-row {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  padding: 10rpx;
+}
+
+.link {
+  color: #4b6eac;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.button {
+  width:22%; /* 或者根据需要调整宽度 */
+  font-size: 28rpx;
+  color: #ffffff;
+  background-color: #4b6eac;
+  text-align: center;
+  border-radius: 4px;
+  margin: 0 10rpx; /* 添加左右边距，确保按钮之间有间隔 */
+}

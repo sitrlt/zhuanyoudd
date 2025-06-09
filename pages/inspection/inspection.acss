@@ -1,0 +1,53 @@
+.container {
+  padding: 20rpx;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.item-image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.qrcode {
+  margin-left: 20rpx;
+}
+
+.qr-code-image {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.info {
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.status {
+  color: blue;
+  font-weight: bold;
+}
+
+.equipment-status {
+  margin: 20rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.picker {
+  margin-left: 10rpx;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+}
+
+.submit-button {
+  margin-top: 20px;
+  background-color: #336699;
+  color: white;
+}

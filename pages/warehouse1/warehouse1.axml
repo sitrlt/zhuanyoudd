@@ -1,0 +1,20 @@
+<!-- 1.axml -->
+<view class="container">
+  <view class="header">
+    <text class="title">库室查询</text>
+  </view>
+  <view class="header1">
+    <text class="subtitle">{{storagerackName}}</text>
+  </view>
+  <view class="header1">
+    <text class="subtitle">库室: {{reservoirAreaname}} 装备总数:{{wmsNum}}</text>
+  </view>
+  <view class="equipment-list">
+    <block a:for="{{equipment}}" a:key="index">
+      <view class="equipment-item" onTap="selectMateria2" data-id="{{item.storagelocationId}}">
+        <text>{{item.storagelocationName}}</text>
+        <text class="count" onTap="selectMateria2" data-id="{{item.storagelocationId}}">（{{wmsNumMap[item.storagelocationId]}}）</text>
+      </view>
+    </block>
+  </view>
+</view>

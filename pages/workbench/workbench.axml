@@ -1,0 +1,45 @@
+<view class="container">
+  <!-- 顶部标题栏 -->
+  <view class="header">
+    <text class="title">工作台</text>
+    <view class="header-icons">
+      <button class="icon-button" onTap="onSearchTap">
+     <icon type="search" aria-label="search" size="25" color="white"/>
+    
+      </button>
+      <button class="icon-button" onTap="onAddTap" >+</button>
+    </view>
+  </view>
+
+  <!-- 图标按钮区域，三行三列布局 -->
+  <view class="icon-center">
+  <view class="icons-grid">
+    <view class="icon-box" onTap="onWarehouseTap">
+      <image class="icon" src="../a/仓库.png"/>
+      <text class="label">库房</text>
+    </view>
+    <view class="icon-box" onTap="onInventoryTap">
+       <image class="icon" src="../a/库存.png"/>
+      <text class="label">库存</text>
+    </view>
+    <view class="icon-box" onTap="onDistinguishTap">
+       <image class="icon" src="../a/扫描仪.png"/>
+      <text class="label">物资识别</text>
+    </view>
+    <!-- <view class="icon-box" onTap="onTaskCenterTap">
+      <view class="icon">📋</view>
+      <text class="label">任务中心</text>
+      <view class="badge">3</view> 
+    </view> -->
+    <!-- 可以继续添加其他图标，确保数量是3的倍数以对齐布局 -->
+  </view>
+</view>
+ <!-- 内容区域占位符 -->
+  <view class="content-placeholder"></view>
+  <!-- 底部导航栏 -->
+  <view class="footer">
+    <view class="footer-item" onTap="onMessageTap">消息</view>
+    <view class="footer-item active" onTap="onWorkbenchTap">工作台</view>
+    <view class="footer-item" onTap="onProfileTap">个人中心</view>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<view class="container">
+  顶部信息
+  <view class="header">
+    <image src="{{material.commodityImg}}" class="item-image"></image>
+    <!-- <view class="qrcode">
+      <text>二维码：</text>
+      <image src="{{material.chipcodeImg}}" class="qr-code-image"></image>
+    </view> -->
+    <view class="info">
+      <view>EPC码：{{material.chipCode}}</view>
+      <view>所属单位：{{material.dept.deptName}}</view>
+      <view>货位：{{material.storagelocationName}}</view>
+      <!-- <view>物品状态：<text class="status">{{itemStatus}}</text></view> -->
+    </view>
+  </view>
+
+  <!-- 执勤状态 -->
+  <view class="status-switch">
+    <text>执勤状态：</text>
+    <switch checked="{{onDuty}}" bindchange="toggleDuty"></switch>
+  </view>
+
+  <!-- 详细信息 -->
+  <view class="details">
+    <view>47位编码：{{material.materialNumber}}</view>
+    <view>物资名称：{{material.materialName}}</view>
+    <view>物资类型：{{material.wmsMaterialtype.typeName}}</view>
+    <view>执勤单位：{{material.warehouseName}}</view>
+    <view>生产商：{{material.producersName}}</view>
+    <view>供应商：{{material.supplierName}}</view>
+  </view>
+
+  <!-- 综合评分 -->
+  <!-- <view class="rating">
+    <text>售后服务综合评分：</text>
+    <block a:for="{{serviceRating}}" a:key="*this">
+      <text class="star">{{item}}</text>
+    </block>
+  </view>
+  <view class="rating">
+    <text>设备性能综合评分：</text>
+    <block a:for="{{performanceRating}}" a:key="*this">
+      <text class="star">{{item}}</text>
+    </block>
+  </view> -->
+  <!-- <view class="rating">
+    <text class="review-link"><navigator url="/pages/equipmentDetail/equipmentDetail">去评价</navigator></text>
+  </view> -->
+
+  <!-- 按钮区域 -->
+  <view class="actions">
+    <button type="default" >报废</button> <!--onTap="showScrap"-->
+    <button type="primary" >维修</button> <!--onTap="showMaintenancePage"-->
+    <button type="primary" >保养</button> <!--onTap="showUpKeepPage"-->
+  </view>
+  <view class="actions">
+    <button type="warn">归还</button>
+    <button type="primary" >巡检</button> <!--onTap="showInspectionPage"-->
+    <button type="primary">转归属申请</button>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+.maintenance-page {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.maintenance-header {
+  background-color: #336699;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.maintenance-details {
+  margin-top: 10px;
+}
+
+.maintenance-options {
+  margin-top: 10px;
+}
+
+.repair-unit-input,
+.repair-requirements-input {
+  margin-top: 10px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  background-color: #336699;
+  color: white;
+}
